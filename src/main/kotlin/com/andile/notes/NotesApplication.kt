@@ -1,6 +1,6 @@
 package com.andile.notes
 
-import com.andile.notes.model.Notes
+import com.andile.notes.model.Note
 import com.andile.notes.repository.NotesRepository
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
@@ -20,9 +20,10 @@ fun main(args: Array<String>) {
 		@Throws(Exception::class)
 		override fun run(args: ApplicationArguments) {
 			listOf("Note 1", "Note 2", "Note 3").forEach {
-				repository.save(Notes(text = it, user = "user"))
+				repository.save(Note(text = it, user = "user"))
 			}
 			repository.findAll().forEach { println(it) }
 		}
 	}
+
 }

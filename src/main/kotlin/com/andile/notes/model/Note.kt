@@ -3,10 +3,10 @@ package com.andile.notes.model
 import javax.persistence.*
 
 @Entity
-data class Notes(
+data class Note(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
     val text: String? = null,
-    val user: String? = null
+    var user: String? = null
 )
